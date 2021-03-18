@@ -39,7 +39,7 @@ To check status of current tasks, run following command:
 curl -H "content-type: application/json" -H "X-Api-Key: YOUR API KEY" -X GET https://api.clockify.me/api/v1/workspaces/{YOUR WORKSPACE ID}/projects/{YOUR PROJECT ID}/tasks
 ```
 
-##Generating report 
+## Generating report 
 
 To generate report summary, send POST request to  https://reports.api.clockify.me/v1/workspaces/{YOUR WORKSPACE ID}/reports/summary 
 and body should contain following: 
