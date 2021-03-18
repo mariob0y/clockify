@@ -42,7 +42,7 @@ curl -H "content-type: application/json" -H "X-Api-Key: YOUR API KEY" -X GET htt
 ##Generating report 
 
 To generate report summary, send POST request to  https://reports.api.clockify.me/v1/workspaces/{YOUR WORKSPACE ID}/reports/summary 
-and body should contain following:
+and body should contain following: 
 
 ```
 {  "dateRangeStart": "{START DATE}",
@@ -56,3 +56,4 @@ and body should contain following:
 
 ```
 
+For this command you may use POSTMAN
