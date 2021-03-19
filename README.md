@@ -11,49 +11,24 @@ For checking your workspaces and receiving it's ID, run following command:
 ```
 curl -H "content-type: application/json" -H "X-Api-Key: YOUR API KEY" -X GET https://api.clockify.me/api/v1/user
 ```
-and loock for following attribute:
+and look for following attribute:
 
 ```
     "activeWorkspace": "XXXXXXXXXXXXXXXXXXXXXXXX",
     "defaultWorkspace": "XXXXXXXXXXXXXXXXXXXXXXXXX",
 
 ```
-## Project 
+## Running script  
 
-For checking your project and receiving it's ID, run following command:
-
-```
-curl -H "content-type: application/json" -H "X-Api-Key: YOUR API KEY" -X GET https://api.clockify.me/api/v1/workspaces/{YOUR WORKSPACE ID}/projects
-```
-
-and loock for following attribute:
-```
-        "id": "XXXXXXXXXXXXXXXXXXXXXXX",
-        "name": "Тестове завдання Quintagroup",
-```
-
-## Tasks 
-
-To check status of current tasks, run following command:
-```
-curl -H "content-type: application/json" -H "X-Api-Key: YOUR API KEY" -X GET https://api.clockify.me/api/v1/workspaces/{YOUR WORKSPACE ID}/projects/{YOUR PROJECT ID}/tasks
-```
-
-## Generating report 
-
-To generate report summary, send POST request to  https://reports.api.clockify.me/v1/workspaces/{YOUR WORKSPACE ID}/reports/summary 
-and body should contain following: 
+Only external library for Python we would need is ``` requests ```, so first run this command:
 
 ```
-{  "dateRangeStart": "{START DATE}",
-  "dateRangeEnd": "{END DATE}",
-  "summaryFilter": {
-    "groups": [
-      "USER",
-      "PROJECT",
-      "TIMEENTRY"
-    ]}}
-
+python3 pip install requests
 ```
 
-For this command you may use POSTMAN
+To run ```clockify.py``` script, open terminal in location of script, and run following command:
+
+```
+python clockify.py YOUR_AUTH_API_KEY WORKSPACE_ID YYYY-MM-DD YYYY-MM-DD
+```
+Last two arguments - start date and end date for report. If run successfully - ```report.txt``` should be generated in same folder where script is located
